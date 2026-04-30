@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realtime LinkedIn Scrapper Agent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-grid"></div>
+    <main class="app-shell">
+      <header class="hero">
+        <p class="badge">Realtime API Agent</p>
+        <h1>LinkedIn Insight Radar</h1>
+        <p class="hero-subtitle">
+          Stream live company intelligence and AI-style hiring analytics from LinkedIn data.
+        </p>
+      </header>
+
+      <section class="control-panel">
+        <div class="field-wrap">
+          <label for="domainInput">Company Domain</label>
+          <input id="domainInput" type="text" value="apple.com" placeholder="example.com" />
+        </div>
+        <button id="connectButton">Connect Live Feed</button>
+        <button id="singleFetchButton" class="ghost">One-Time Snapshot</button>
+      </section>
+
+      <section class="status-panel">
+        <div>
+          <span class="label">Status</span>
+          <p id="statusText">Idle</p>
+        </div>
+        <div>
+          <span class="label">Last Refresh</span>
+          <p id="refreshText">-</p>
+        </div>
+      </section>
+
+      <section class="cards">
+        <article class="card">
+          <h2>Company Snapshot</h2>
+          <ul id="companyList" class="metric-list"></ul>
+        </article>
+        <article class="card">
+          <h2>Insight Signals</h2>
+          <div id="signalGrid" class="signal-grid"></div>
+        </article>
+        <article class="card wide">
+          <h2>Job Analytics</h2>
+          <div id="jobAnalytics" class="job-analytics"></div>
+        </article>
+      </section>
+
+      <section class="raw-panel card wide">
+        <h2>Raw API Response</h2>
+        <pre id="rawOutput">{}</pre>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
